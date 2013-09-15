@@ -1,0 +1,43 @@
+AXI: advenced extensible interface
+
+文件I/O函数：http://linux.chinaunix.net/techdoc/system/2008/10/14/1038121.shtml
+
+
+
+http://www.doc88.com/p-870818764983.html
+
+
+
+如何测量RF值（接收信号强度指示）
+
+
+
+http://wenku.baidu.com/view/565bea22aaea998fcc220e82.html
+http://wenku.baidu.com/view/d64d25553c1ec5da50e2704f.html
+超声波测距
+
+
+暑期实践相关
+http://bbs.nju.edu.cn/vd3884/bbstcon?board=M_League&file=M.1375366092.A
+
+
+sysfs相关
+sysfs查看和设定内核参数，统一的导出内核数据，总是被挂载在/sys挂载点上。
+用于将系统中的设备组织成层次结构，并向用户模式程序提供详细的内核数据结构信息。
+2.6内核以前，大多数驱动程序都是映射到/dev目录下，并用file_operations数据结构来组织驱动程序，
+这样使/dev愈加繁琐。2.6之后，采用sys文件系统来组织驱动，将系统中的设备组织成层次结构。对于
+应用程序而言，要对设备进行操作，只需在sys目录下找到相应的文件，对其进行读写操作即可。
+(具体是编写完驱动程序后，将生成的*.ko文件拷贝到小车的文件系统中，系统启动后，运行下指令：
+insmod *.ko之后，系统将会加载*驱动模块。(会在sys/class/目录下生成对应设备文件夹))
+http://www.ibm.com/developerworks/cn/linux/l-cn-sysfs/
+sys目录下有以下文件夹：
+block 目录:包含所有的块设备。
+devices 目录:包含系统所有的设备，并根据设备挂载的总线类型组织成层次结构。
+bus:包含系统所有的总线类型
+drivers:包含系统所有的已注册的设备驱动程序
+class:包含系统的设备类型(我们自定义的设备类型就此目录中)
+..........................
+..........................
+
+文件操作，read,write  (文件描述符)
+http://dev.yesky.com/468/7601968.shtml
